@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Mellužu Republika Lūšu 4 mājā</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" link href="static/melstyle.css">
+
+        <style></style>
+    </head>
+
+    <body>
+
+        <header>
+           <div class="nav-container">
+            <div class="logo">
+           <p>Меллужская Республика</p>
+           <img src="https://i.postimg.cc/8PqRywsK/normal-flag2.png" alt="flag">
+            </div>
+     <nav id="maintab" class="topnav">
+  <ul class="menu">
+    <li data-section="home"><a href="#" id="glav">Главная</a></li>
+
+    <li class="submenu-wrapper" data-section="about">
+      <a href="#"  id="onas">О нас</a>
+
+      <ul class="submenu">
+        <li  data-section="news"><a href="#">Новости</a></li>
+      </ul>
+    </li>
+
+    <li data-section="governors"><a href="#" id="predst">Представители Республики</a></li>
+    <li class="submenu-wrapper" data-section="appoints"><a href="#" id="zapis">Организация</a>
+     <ul class="submenu">
+        <li data-section="punish"><a href="#">Данные об отбывании наказания</a></li>
+        <li data-section="examreg"><a href="#">Регистрации на гос-экзамены</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#" style="font-size:20px">Вход <i class="fa fa-sign-in"></i></a></li>
+  </ul>
+
+  <a href="javascript:void(0)" class="icon" onclick="burgers()">
+    <i class="fa fa-bars"></i>
+  </a>
+</nav>
+
+            </div>
+        </header>
+
+    <div class ="sections">
+
+             <div class="emblem-layout">
+            <img src="https://i.postimg.cc/P5PmrYZs/nobcgr.png" alt="emblem" class="emblem-img">
+
+        <div id="home" class = "tabcontent vidnoe">
+          <img src="https://i.postimg.cc/fLrtVT92/housepanorama.png" alt="housepicture" id="housepc">
+          <img src="https://i.postimg.cc/PxPb37b7/house9.png" alt="housepicturemobile" id ="housemobile">
+
+
+<div class="row">
+  <a href="{{ url_for('mel1') }}" class="pierak">Записаться на приём к президенту МРДЛ4</a>
+
+  <div class="output" style="margin-top: 20px; line-height: 1.6;">
+    <h2>Добро пожаловать в Меллужскую Республику в Доме Лушу 4</h2>
+
+    <p><strong>МРДЛ4</strong> — это уникальное коммунистическое государство, основанное 4 июня 2020 года в пределах Дома Лушу 4, расположенного в Юрмале.</p>
+
+    <p>Республика была создана как форма свободного самоопределения и коллективного самоуправления, где каждый гражданин — независимо от возраста, пола, биологического вида или взглядов — имеет право участвовать в управлении государством.</p>
+
+    <h3>Основные ценности</h3>
+    <p>Мы верим в справедливость, равенство, обязательность труда, детскую дисциплину и братство между всеми живыми существами.</p>
+
+    <p>В центре государственной идеологии — идеи солидарности, самодостаточности, уважения к государственным символам и стремление к устойчивому развитию общества.</p>
+
+    <h3>Конституция и власть</h3>
+    <p>Наша Конституция гарантирует права граждан, определяет формы выборов, структуру власти и нормы повседневной жизни.</p>
+
+    <p>В МРДЛ4 существует демократическое правительство, регулируемое регулярными выборами и Народным Советом. Закон обязателен для всех — от Президента до младшего дошкольника.</p>
+
+    <h3>Символика и жизнь</h3>
+    <p>Мы гордимся собственной валютой — меллужским долларом (MLD), оригинальной системой наград, военными и трудовыми званиями, а также государственными праздниками, которые отражают нашу историю и дух борьбы за независимость.</p>
+
+    <p><strong>Меллужская Республика</strong> — это не просто территория, а живой организм, в котором есть место и серьёзной политике, и детской искренности. Здесь каждый гражданин — строитель нового общества.</p>
+
+    <p style="font-weight: bold;">МРДЛ4 существует, мыслит, развивается. И движется вперёд — к коммунизму.</p>
+  </div>
+</div>
+
+     {% for Autors, Komentars, Datums in koments %}
+    <div>
+        <p id="coment">{{ Autors }} <span>сообщает: </span>  {{ Komentars }} {{ Datums }} </p>
+
+    </div>
+     {% endfor %}
+
+      <div class = "row">
+      <form action="{{ url_for('mel')}}" method="POST">
+        <textarea name="autors0" placeholder="Имя автора" class="form-control" style="resize: none"></textarea>
+        <textarea name="komentars_mel" placeholder="Написать комментарий" class="form-control" style="resize: none"></textarea>
+        <input type="submit" value="Отправить" class="pierak2">
+      </form>
+      </div>
+        </div>
+
+        <div id="about" class = "tabcontent">
+   <div class="row">
+  <h1><b>Описание Меллужской Республики в Доме Лушу 4 (МРДЛ4)</b></h1>
+
+  <img class="custom-img" src="https://i.postimg.cc/nrrLYYnn/house5.png" alt="Флаг МРДЛ4">
+
+  <p>
+    <strong>Меллужская Республика в Доме Лушу 4 (МРДЛ4)</strong> — это суверенное коммунистическое государство, основанное 4 июня 2020 года на территории Дома Лушу 4 в городе Юрмала, Латвия. Республика возникла как результат стремления к самостоятельному устройству жизни, коллективной ответственности и защите основополагающих принципов справедливости, равенства и самоуправления.
+  </p>
+
+  <img class="custom-img" src="https://i.postimg.cc/nzgq04TK/f19c1a4a-1a67-420b-a072-791e31e0d66d.jpg" alt="Герб">
+
+  <p>
+    История МРДЛ4 была провозглашена в условиях внутренней необходимости упорядоченного общественного устройства. Основатели республики, действуя в духе самоопределения, выработали базовые принципы государственного существования и закрепили их в Декларации независимости, подписанной 4 июня 2020 года.
+  </p>
+
+  <p>
+    Уже в первые месяцы была принята Конституция МРДЛ4 — главный правовой документ, определяющий форму правления, полномочия государственных органов, права и обязанности граждан, а также символику и территориальную организацию. Конституция легла в основу всей государственной и общественной жизни и остаётся неизменным ориентиром развития республики.
+  </p>
+
+  <h3>Политическое устройство</h3>
+  <img class="custom-img" src="https://i.postimg.cc/gc5XWWfS/IMG-0684.jpg" alt="Герб">
+
+  <p>
+    Политическое устройство МРДЛ4 — единое, неделимое, централизованное государство с чётко структурированной системой власти. Главой государства является Президент, а также действуют другие институты: Правительство, Народный Совет, Комитет дисциплины и Суд. Все органы избираются или формируются в соответствии с установленными законами.
+  </p>
+
+  <p>
+    Выборы и голосование являются неотъемлемой частью политической жизни республики, и каждый гражданин обладает правом участвовать в управлении государством.
+  </p>
+
+  <h3>Конституция и законы</h3>
+   <img class="custom-img" src="https://i.postimg.cc/85jhRKdP/37d5b03d-5a9f-4463-a6f6-c669f276c4d9.jpg" alt="Герб">
+
+  <p>
+    Конституция МРДЛ4 — это не просто документ, а живой фундамент государства. Она состоит из статей, регулирующих все аспекты жизни: от символики и государственной службы до экономических отношений и дисциплинарной ответственности. Все граждане, независимо от занимаемой должности, подчиняются законам, принятым в соответствии с Конституцией.
+  </p>
+
+  <p>
+    Законодательная система строго соблюдается. Законы принимаются с учётом основополагающих принципов — честности, коллективизма, равенства и обязательности труда. Нарушения караются в соответствии с Уставом дисциплинарной ответственности.
+  </p>
+
+  <h3>Идеология и цели</h3>
+
+  <p>
+    МРДЛ4 — государство, идущее к построению коммунистического общества, в котором нет места эксплуатации, социальному неравенству и произволу. Центральными идеологическими принципами являются:
+  </p>
+
+  <ul>
+    <li>Коллективная собственность и равный доступ к благам;</li>
+    <li>Труд как форма служения обществу;</li>
+    <li>Высшая ценность закона и справедливости;</li>
+    <li>Гордость за государственные символы и институты;</li>
+    <li>Сохранение суверенитета и независимости во всех формах.</li>
+  </ul>
+
+  <p>
+    МРДЛ4 стремится не к внешнему признанию, а к внутренней устойчивости, порядку и нравственной силе своего народа. Мы развиваемся на собственных основаниях и верим, что устойчивое государство строится не на территории, а на ответственности, общих целях и политической воле.
+  </p>
+
+  <p>
+    <strong>МРДЛ4 — это не просто страна. Это модель порядка, сознания и справедливости. Добро пожаловать.</strong>
+  </p>
+</div>
+
+
+        </div>
+
+            <div id="punish" class="tabcontent">
+                <h1>База данных подонков, которые нарушают законы Меллужской Республики в Доме Лушу 4</h1>
+                     <form action="{{ url_for('mel') }}" method="POST" class="form3" onsubmit="return dostup(event)">
+                 <textarea placeholder="Имя осуждённого" name="first_name2"  required></textarea>
+                 <textarea placeholder="Фамилия осуждённого" name="last_name2" required></textarea>
+
+                <label for="birthday">Выберите дату совершения преступления</label>
+                <input type="date" class="datums" name="date2">
+                <textarea placeholder="Причина наказания" name="crimecause2" required></textarea>
+                  <label for="birthday">Укажите статус обвиняемого</label>
+                 <div class="radio-group">
+                    <label><input type="radio" name="exc2" value="Ch" required>Гражданин(-ка) Меллужской Республики в Доме Лушу 4</label>
+                    <label><input type="radio" name="exc2" value="Ch1">Не является гражданином(-кой) Меллужской Республики в Доме Лушу 4, но является гражданином Латвийской Республики</label>
+                    <label><input type="radio" name="exc2" value="Ch2">Не является гражданином ни Латвийской Республики, ни Меллужской Республики в Доме Лушу 4</label>
+                    <label><input type="radio" name="exc2" value="Ch3">Имеет постоянный вид на жительство в МРДЛ4</label>
+                    <label><input type="radio" name="exc2" value="Ch4">Лицо без гражданства / Является монархом Меллужской Респубоики в Доме Лушу 4</label>
+                 </div>
+                 <label for="birthday">Укажите нарушенные статьи конституции МРДЛ4 обвиняемым</label>
+                 <textarea placeholder="Статьи" name = "laws2" required></textarea>
+                 <label for="birthday">Вынесеное наказание</label>
+                 <textarea placeholder="Причина наказания" name = "punishment2" required></textarea>
+                  <label for="birthday">Время начала отсидки (если наказание - лишение свободы)</label>
+                 <input type="time" id="appt" name="prisontime">
+                  <label for="birthday">Отбыл ли подсудимый свой срок / Выполнил ли требования верховного суда ?</label>
+                  <div class="radio-group">
+                    <label><input type="radio" name="exc21" value="Ch" required>Да</label>
+                    <label><input type="radio" name="exc21" value="Ch1">Нет</label>
+                  </div>
+                  <label for="birthday">Код доступа к базе данных</label>
+                  <input type="password" class="pwd" name="pwd">
+                <button type="submit" class="pierak" style="font-size: 16px" >Регистрировать ЗЕКа</button>
+              </form>
+            </div>
+        <div id="news" class="tabcontent">
+              <h1>Новостной баннер МРДЛ4 </h1>
+              <div class="card-container">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img" src="https://i.postimg.cc/59DQ8JNc/IMG-1852.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Подготовка в лагерь</h5>
+    <h6 class="card-subtitle">29 июня 2025 года</h6>
+    <p class="card-text">Гражданка Лига Абель собирается в лагерь. Она уже почти собралась, но забыла взять свою совесть.</p>
+    <a href="#" class="card-link" data-section="news1">Читать больше</a>
+  </div>
+        </div>
+
+              <div class="card" style="width: 18rem;">
+            <img class="card-img" src="https://i.postimg.cc/MpJnnYZ1/IMG-4130.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Именины Аусмы</h5>
+    <h6 class="card-subtitle">26 июня 2025 года</h6>
+    <p class="card-text">Сегодня у Аусмы Милберги именины, однако она отказалась их праздновать</p>
+    <a href="#" class="card-link">Читать больше</a>
+  </div>
+        </div>
+   <div class="card" style="width: 18rem;">
+            <img class="card-img" src="https://i.postimg.cc/g2g0PgHD/IMG-0053.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Саша Плумберга</h5>
+    <h6 class="card-subtitle">8 июня 2025 года</h6>
+    <p class="card-text">Александра Плумберга очень устаёт, потому что ей приходится ухаживать за своим ребёнком Тариком</p>
+    <a href="#" class="card-link">Читать больше</a>
+  </div>
+        </div>
+   <div class="card" style="width: 18rem;">
+            <img class="card-img" src="https://i.postimg.cc/QdgH1WVw/IMG-5257.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Happy Birthday Ausma!</h5>
+    <h6 class="card-subtitle">22 мая 2025 года</h6>
+    <p class="card-text">У Аусмы Милберги сегодня день рождения и она ярко празднует его в т/ц "Domina Shopping"</p>
+    <a href="#" class="card-link">Читать больше</a>
+  </div>
+
+        </div>
+                    <div class="card" style="width: 18rem;">
+            <img class="card-img" src="https://i.postimg.cc/5yHXC7FS/IMG-1540.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Административный процесс</h5>
+    <h6 class="card-subtitle">20 мая 2025 года</h6>
+    <p class="card-text">В отношении Аусмы Милберги возбуждено уголовное дело за хамство президенту МРДЛ4</p>
+    <a href="#" class="card-link">Читать больше</a>
+  </div>
+
+        </div>
+                    <div class="card" style="width: 18rem;">
+            <img class="card-img" src="https://i.postimg.cc/sDhBfLzV/IMG-0585.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Турнир по танцам</h5>
+    <h6 class="card-subtitle">18 мая 2025 года</h6>
+    <p class="card-text">Сегодня вместе с Лигой (Еленой) и Аусмой готовимся в турниру по танцам</p>
+    <a href="#" class="card-link">Читать больше</a>
+  </div>
+
+        </div>
+              </div>
+        </div>
+
+        <div id="governors" class = "tabcontent">
+
+            <div class="governor-card">
+         <img class="governor" src="https://i.postimg.cc/jd8HbZD4/pogodinastock.jpg" alt="sasha">
+             <div class="governor-info">
+               <p class="governor-name">Александра Плумберга</p>
+               <p class="governor-description">
+      Старший советник по внутренним делам МРДЛ4, отличается рассудительностью и строгой приверженностью законам республики. Известна своей дисциплиной и уважением к государственному порядку.
+              </p>
+             </div>
+           </div>
+             <div class="governor-card">
+         <img class="governor" src="https://i.postimg.cc/Wz8Mt7Xj/olitastock.jpg" alt="olita">
+             <div class="governor-info">
+               <p class="governor-name">Олита Плумберга</p>
+               <p class="governor-description">
+Руководитель культурного департамента, увлечена развитием традиций, праздников и образовательных мероприятий. Её отличают мягкость, творческое мышление и любовь к родной республике.              </p>
+             </div>
+           </div>
+            <div class="governor-card">
+         <img class="governor" src="https://i.postimg.cc/sxjWFhyL/ausmastock.png" alt="ausma">
+             <div class="governor-info">
+               <p class="governor-name">Аусма Милберга</p>
+               <p class="governor-description">
+Юная гражданка и активная коммунистка, выступающая за справедливость и развитие МРДЛ4. Хотя она иногда нарушает правила, её стремление к учёбе и улучшению государства делает её важной фигурой в будущем страны.              </p>
+             </div>
+           </div>
+             <div class="governor-card">
+         <img class="governor" src="https://i.postimg.cc/L58JQF3K/ligastock.png" alt="liiga">
+             <div class="governor-info">
+               <p class="governor-name">Лига Абель (рус. Елена Абель)</p>
+               <p class="governor-description">
+Полноправная гражданка МРДЛ4, хотя часто нарушает школьную дисциплину и государственные законы. Несмотря на это, она остаётся частью общества, а её поведение находится под наблюдением администрации.
+              </p>
+             </div>
+           </div>
+        </div>
+
+        <div id="appoints" class = "tabcontent">
+        <p class="governor-name" style="text-align: center">Регистрация на международный всемеллужский экзамен 2025</p>
+
+              <form action="{{ url_for('mel') }}" method="POST" class="exam-form" id="exam-form">
+                 <textarea placeholder="Имя" id="first_name" name="first_name1"  required></textarea>
+                 <textarea placeholder="Фамилия" id="last_name" name="last_name1" required></textarea>
+
+               <label for="exc">Выберите нужный экзамен</label>
+                 <div class="radio-group">
+                    <label><input type="radio" name="exc" value="История" required> История МРДЛ4</label>
+                    <label><input type="radio" name="exc" value="Математика"> Общая математика</label>
+                    <label><input type="radio" name="exc" value="Английский"> International English Exam</label>
+                    <label><input type="radio" name="exc" value="Экзамен">Комбинированный (История МРДЛ4 + Математика)</label>
+                 </div>
+               <label for="exc">Выберите удобную вам дату экзамена</label>
+                  <input type="date" class="datums1" name="birthday1">
+
+                <button type="submit" class="pierak" style="font-size: 16px">Зарегистрироваться</button>
+              </form>
+
+        <p class="governor-name" style="color: red"><span id="not"></span></p>
+
+        <button type="button" class="pierak2" onclick="openPage('results')">Получить результаты</button>
+
+
+        </div>
+               <div id="results" class = "tabcontent">
+
+                   <form class="form2" onsubmit="seeres(event)">
+                 <textarea placeholder="Имя" name="first_name"  required></textarea>
+                 <textarea placeholder="Фамилия" name="last_name" required></textarea>
+                   <label for="exc">Код доступа:</label><br>
+                 <input type="password" id="pwd" name="pwd">
+                 <button type="submit" class="pierak3" onclick="seeres()" style="font-size: 16px">Посмотреть результаты</button>
+                   </form>
+                   <p class="governor-name"><span id="not2"></span></p>
+               </div>
+
+             <img src="https://i.postimg.cc/P5PmrYZs/nobcgr.png" alt="emblem" class="emblem-img">
+             </div>
+    </div>
+
+         <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabContents = document.querySelectorAll('.tabcontent');
+  const sibaris = document.getElementById("maintab");
+
+  // Делегируем обработчик на всё меню (включая подменю)
+  document.querySelector('.menu').addEventListener('click', function (e) {
+    const target = e.target.closest('[data-section]');
+    if (!target) return;
+
+    e.preventDefault();
+
+    const targetId = target.getAttribute('data-section');
+    const targetContent = document.getElementById(targetId);
+    if (!targetContent) return;
+
+    // Скрыть все табы
+    tabContents.forEach(tc => tc.classList.remove('vidnoe'));
+    // Показать нужный таб
+    targetContent.classList.add('vidnoe');
+
+    // Убрать active у всех li
+    document.querySelectorAll('.menu li').forEach(item => item.classList.remove('active'));
+    // Добавить active ближайшему li
+    target.closest('li').classList.add('active');
+
+
+
+    // Открыть подменю, если есть
+    const clickedLi = target.closest('li');
+    const submenu = clickedLi.querySelector('.submenu');
+
+   if (submenu) {
+  // Переключить текущее
+    document.querySelectorAll('.submenu').forEach(el => {
+    if (el !== submenu) el.classList.remove('open');
+  });
+  submenu.classList.toggle('open');
+} else {
+  // Если нет подменю — закрыть всё
+    document.querySelectorAll('.submenu').forEach(el => el.classList.remove('open'));
+  sibaris.classList.remove('sidebar');
+
+}
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Закрыть подменю при клике вне меню
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.topnav')) {
+      sibaris.classList.remove('sidebar');
+      document.querySelectorAll('.submenu.open').forEach(el => el.classList.remove('open'));
+    }
+  });
+});
+
+
+
+         function burgers() {
+         var x = document.getElementById("maintab");
+                if(x.className === "topnav"){
+                    x.className += " sidebar";
+                } else {
+                    x.className = "topnav";
+                }
+
+      }
+
+
+     document.getElementById('exam-form').addEventListener('submit', async function(e){
+         e.preventDefault();
+
+         const form = e.target;
+         const formdata = new FormData(form);
+
+          const vards = document.getElementById("first_name").value;
+          const uzvards = document.getElementById("last_name").value;
+
+
+         try{
+             const atbilde = await fetch("{{url_for('mel')}}", {
+                 method: "POST",
+                 body: formdata
+             });
+             if (!atbilde.ok){
+                 document.getElementById("not").innerHTML= vards + " " +uzvards +", к сожалению регистрация не удалась";
+                 return;
+             }
+             document.getElementById("not").innerHTML ="Товарищ "+ vards +" " + uzvards+"! Успешно отправлено!";
+             form.reset();
+         }
+         catch(error){
+           document.getElementById("not").innerHTML = "Товарищ "+vards + " " +uzvards +"! Сервер недоступен. Проверьте подключение.";
+            form.reset();
+         }
+     });
+
+     function openPage(pageName){
+            var tabcontent = document.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+     tabcontent[i].classList.remove("vidnoe");
+  }
+    var target = document.getElementById(pageName);
+    if (target){
+    target.classList.add("vidnoe");
+}
+     }
+
+     function seeres(event){
+         event.preventDefault();
+         const pasw = document.getElementsByClassName("pwd").value;
+          for (var i =0; i<pasw.length; i++){
+         if (pasw[i] === "AP345") document.getElementById("not2").innerHTML="Вы не сдали экзамчик!";
+     }}
+     function dostup(event) {
+  event.preventDefault();
+
+  const pasw = document.querySelector('input[name="pwd"]').value;
+
+  if (pasw === "AP345") {
+    event.target.submit();  // отправляем форму вручную
+    return true;
+  }
+
+  alert("Неверный пароль");
+  return false;
+}
+
+         </script>
+    </body>
+</html>
+
