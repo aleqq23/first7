@@ -15,10 +15,10 @@ def hello():
 def mel():
     # Подключение к базе
     mydb = mysql.connector.connect(
-        host="sql.freemysqldatabase.com",  # замени на свой host
-        user="sqlXXXXXXX",                # замени на свой user
+        host="sql7.freesqldatabase.com",  # замени на свой host
+        user="sql7788941",                # замени на свой user
         passwd=os.environ.get('DB_PASS'), # пароль из переменной окружения
-        database="sqlXXXXXXX",            # замени на имя своей базы
+        database="sql7788941",            # замени на имя своей базы
         port=3306
     )
     mycursor = mydb.cursor()
