@@ -6,6 +6,7 @@ import json
 from datetime import datetime
 import pytz
 import mysql.connector
+ import os
 
 app = Flask(__name__)
 comments = []
@@ -20,10 +21,11 @@ def hello():
 def mel():
 
     mydb = mysql.connector.connect(
-        host="asafrey074.mysql.pythonanywhere-services.com",
-        user="asafrey074",
-        passwd="lakroda23",
-        database="asafrey074$melluzhi",
+    host="sql7.freesqldatabase.com",
+    user="sql7788941",
+    passwd=os.environ.get('DB_PASS'),
+    database="sql7788941",
+    port=3306
     )
 
     mycursors = mydb.cursor()
