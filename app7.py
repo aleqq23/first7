@@ -61,8 +61,9 @@ def mel():
             mycursor.execute(sql0, (autors0, komentars_mel, riga_time))
 
         if name1 and surname1 and examname1 and examdate1:
-            sql1 = "INSERT INTO Registrations1 (Name, Surname, Exam_name, Exam_date) VALUES (%s, %s, %s, %s)"
-            mycursor.execute(sql1, (name1, surname1, examname1, examdate1))
+            riga_time = datetime.now(pytz.timezone('Europe/Riga'))
+            sql1 = "INSERT INTO Registrations1 (Name, Surname, Exam_name, Exam_date, Registracijas_datums) VALUES (%s, %s, %s, %s, %s)"
+            mycursor.execute(sql1, (name1, surname1, examname1, examdate1, riga_time))
 
         if name2 and surname2:
             sql2 = "INSERT INTO Punishments1 (Name, Surname, Crime_date, Crime_cause, Criminal_status, Law_abuse, Punishments, Prison_time, Attendance) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
