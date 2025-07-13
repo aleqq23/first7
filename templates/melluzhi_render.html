@@ -181,12 +181,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div id="punish" class="tabcontent">
                 <h1>База данных подонков, которые нарушают законы Меллужской Республики в Доме Лушу 4</h1>
                      <form action="{{ url_for('mel') }}" method="POST" class="form3" onsubmit="return dostup(event)">
-                 <textarea placeholder="Имя осуждённого" name="first_name2"  required></textarea>
-                 <textarea placeholder="Фамилия осуждённого" name="last_name2" required></textarea>
+                 <textarea placeholder="Имя осуждённого" name="first_name2" style="resize: none" required></textarea>
+                 <textarea placeholder="Фамилия осуждённого" name="last_name2" style="resize: none" required></textarea>
 
                 <label for="birthday">Выберите дату совершения преступления</label>
                 <input type="date" class="datums" name="date2">
-                <textarea placeholder="Причина наказания" name="crimecause2" required></textarea>
+                <textarea placeholder="Причина наказания" name="crimecause2" style="resize: none" required></textarea>
                   <label for="birthday">Укажите статус обвиняемого</label>
                  <div class="radio-group">
                     <label><input type="radio" name="exc2" value="Ch" required>Гражданин(-ка) Меллужской Республики в Доме Лушу 4</label>
@@ -196,7 +196,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <label><input type="radio" name="exc2" value="Ch4">Лицо без гражданства / Является монархом Меллужской Республики в Доме Лушу 4</label>
                  </div>
                  <label for="birthday">Укажите нарушенные статьи конституции МРДЛ4 обвиняемым</label>
-                 <textarea placeholder="Статьи" name = "laws2" required></textarea>
+                 <textarea placeholder="Статьи" name = "laws2" required style="resize: none"></textarea>
                  <label for="birthday">Вынесеное наказание</label>
                  <textarea placeholder="Причина наказания" name = "punishment2" required></textarea>
                   <label for="birthday">Время начала отсидки (если наказание - лишение свободы)</label>
@@ -212,8 +212,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
               </form>
 
               <form action="{{ url_for('mel')}}" method="POST" class="form3" onsubmit="return dostup(event)">
-                <textarea name="first_name3" placeholder="Имя"></textarea>
-                <textarea name="last_name3" placeholder="Фамилия"></textarea>
+                <textarea name="first_name3" placeholder="Имя" style="resize: none"></textarea>
+                <textarea name="last_name3" placeholder="Фамилия" style="resize: none"></textarea>
                   <label for="birthday">Дата и время въезда</label>
                 <input type="datetime-local" id="date21" name="date21" required>
                   <label for="birthday">Дата и время выезда</label>
@@ -226,7 +226,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <label><input type="radio" name="exc5" value="Ch3">Имеет постоянный вид на жительство в МРДЛ4</label>
                     <label><input type="radio" name="exc5" value="Ch4">Лицо без гражданства / Является монархом Меллужской Республики в Доме Лушу 4</label>
                  </div>
-                <textarea name="pers_code" placeholder="Персональный код" class="form-control" style="resize: none"></textarea>
+                <textarea name="pers_code" placeholder="Персональный код" style="resize: none"></textarea>
                 <label for="birthday">Имеется ли судимость в Меллужской Республике в Доме Лушу 4?</label>
                 <div class="radio-group">
                     <label><input type="radio" name="exc6" value="Ch" required>Имеется</label>
@@ -234,7 +234,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                     <label><input type="radio" name="exc6" value="Ch2">Не известно</label>
                     <label><input type="radio" name="exc6" value="Ch3">Имеется административное наказание</label>
                  </div>
-                <textarea name="dopkom" placeholder="Дополнительные комментарии" class="form-control" style="resize: none"></textarea>
+                <textarea name="dopkom" placeholder="Дополнительные комментарии" style="resize: none"></textarea>
                   <label for="birthday">Код доступа к базе данных</label>
                   <input type="password" class="pwd" name="pwd">
                 <input type="submit" value="Отправить" class="pierak2">
