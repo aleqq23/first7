@@ -55,6 +55,15 @@ def mel():
         prisontime2 = request.form.get("prisontime", "").strip()
         attend2 = request.form.get("exc21", "").strip()
 
+        name3 = request.form.get("first_name3", "").strip()
+        surname3 = request.form.get("last_name3", "").strip() 
+        datetimein = request.form.get("date21", "").strip() 
+        datetimeout = request.form.get("date22", "").strip() 
+        citstatus = request.form.get("exc5", "").strip() 
+        pers_code3 = request.form.get("pers_code", "").strip() 
+        sudimost = request.form.get("exc6", "").strip() 
+        dopkom3 = request.form.get("dopkom", "").strip() 
+        
         if autors0 and komentars_mel:
             riga_time = datetime.now(pytz.timezone('Europe/Riga'))
             sql0 = "INSERT INTO Complaints (Autors, Komentars, Datums) VALUES (%s, %s, %s)"
@@ -68,6 +77,9 @@ def mel():
         if name2 and surname2:
             sql2 = "INSERT INTO Punishments1 (Name, Surname, Crime_date, Crime_cause, Criminal_status, Law_abuse, Punishments, Prison_time, Attendance) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
             mycursor.execute(sql2, (name2, surname2, crimedate, crimecause2, crimstatus, lawabuse, punishment2, prisontime2, attend2))
+        if name3 and surname3:
+            sql3 = "INSERT INTO `Arrivals1`(`Имя`, `Фамилия`, `Дата и время въезда`, `Дата и время выезда`, `Гражданский статус`, `Персональный код`, `Судимость`, `Комментарии`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+            mycursor.execute(sql3, (name3, surname3, datetimein, datetimeout, citstatus, pers_code3, sudimost, dopkom3))
 
         mydb.commit()
         mydb.close()
