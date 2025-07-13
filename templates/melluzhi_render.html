@@ -210,9 +210,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                   <input type="password" class="pwd" name="pwd">
                 <button type="submit" class="pierak" style="font-size: 16px" >Регистрировать ЗЕКа</button>
               </form>
+
+              <form action="{{ url_for('mel')}}" method="POST" class="form3" onsubmit="return dostup(event)>
+                <textarea name="first_name3" placeholder="Имя" class="form-control" style="resize: none" required></textarea>
+                <textarea name="last_name3" placeholder="Фамилия" class="form-control" style="resize: none" required></textarea>
+                  <label for="birthday">Дата и время въезда</label>
+                <input type="datetime-local" id="date21" name="birthdaytime" required>
+                  <label for="birthday">Дата и время выезда</label>
+                <input type="datetime-local" id="date22" name="birthdaytime" required>
+                <label for="birthday">Укажите статус прибываемого</label>
+                 <div class="radio-group">
+                    <label><input type="radio" name="exc5" value="Ch" required>Гражданин(-ка) Меллужской Республики в Доме Лушу 4</label>
+                    <label><input type="radio" name="exc5" value="Ch1">Является гражданином Латвийской Республики</label>
+                    <label><input type="radio" name="exc5" value="Ch2">Гражданин другого государства</label>
+                    <label><input type="radio" name="exc5" value="Ch3">Имеет постоянный вид на жительство в МРДЛ4</label>
+                    <label><input type="radio" name="exc5" value="Ch4">Лицо без гражданства / Является монархом Меллужской Респубоики в Доме Лушу 4</label>
+                 </div>
+                <textarea name="pers_code" placeholder="Персональный код" class="form-control" style="resize: none"></textarea>
+                <label for="birthday">Имеется ли судимость в Меллужской Республике в Доме Лушу 4?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="exc6" value="Ch" required>Имеется</label>
+                    <label><input type="radio" name="exc6" value="Ch1">Не имеется</label>
+                    <label><input type="radio" name="exc6" value="Ch2">Не известно/label>
+                    <label><input type="radio" name="exc6" value="Ch3">Имеется административное наказание</label>
+                 </div>
+                <textarea name="dopkom" placeholder="Дополнительные комментарии" class="form-control" style="resize: none"></textarea>
+                <input type="submit" value="Отправить" class="pierak2">
+              </form>
             </div>
         <div id="news" class="tabcontent">
-              <h1>Новостной баннер МРДЛ4 </h1>
+              <h1>Новостной баннер МРДЛ4</h1>
               <div class="card-container">
         <div class="card" style="width: 18rem;">
             <img class="card-img" src="https://i.postimg.cc/59DQ8JNc/IMG-1852.jpg" alt="Card image cap">
