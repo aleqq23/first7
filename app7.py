@@ -12,6 +12,10 @@ comments = []
 koments = []
 momentr=[]
 
+@app.route('/')
+def hello():
+    return "Hello, world!"
+    
 @app.route('/melluzhi', methods=["GET", "POST"])
 def mel():
 
