@@ -34,7 +34,7 @@ def mel():
         crimes1 = mycursor.fetchall()
 
         mydb.close()
-        return render_template("melluzhi.html", koments0=koments0, exams1=exams1, crimes1=crimes1)
+        return render_template("melluzhi_render.html", koments0=koments0, exams1=exams1, crimes1=crimes1)
 
     if request.method == "POST":
         autors0 = request.form.get("autors0", "").strip()
